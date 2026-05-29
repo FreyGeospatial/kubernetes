@@ -10,6 +10,10 @@ kubernetes (Gree for helmsman of a ship) is a container orchestration tool). Hel
 
 A technology that bundles the code and configuration required to run an application in one unit. It has advantages over dedicated servers or VMs intended to run an application. It requires less CPU, is more portable, and can spin up/down and scale faster.
 
+## what are kubernetes namespaces?
+
+Help you organize and isolate workloads.
+
 ## helpful code:
 
 ### minikube
