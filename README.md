@@ -56,6 +56,8 @@ Help you organize and isolate workloads.
 
 - `kubectl delete pod <pod name> -n <namespace> # deletes pod from namespace. If replicas are set to N in manifest, kubernetes will automatically ensure there are always N pods running, even if manual deletion of pod is executed.
 
+- `kubectl describe pod <pod> -n <namespace> # describe the pod manifest and show event logs
+
 *Note: a kubectl context is a saved combination of three things: cluster, user, namespace*
 
 ### helm
