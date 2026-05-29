@@ -8,6 +8,10 @@ kubernetes (Gree for helmsman of a ship) is a container orchestration tool). Hel
 
 A technology that bundles the code and configuration required to run an application in one unit. It has advantages over dedicated servers or VMs intended to run an application. It requires less CPU, is more portable, and can spin up/down and scale faster.
 
+## running kubernetes locally
+
+minikube is a helpful tool for running kubernetes clusters locally, but should not be used in production. You can install on mac with `brew install minikube`
+
 ## helpful code:
 
 `helm uninstall <name> -n <namespace>` # for uninstalling a release from a kubernetes cluster
