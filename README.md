@@ -30,7 +30,15 @@ A technology that bundles the code and configuration required to run an applicat
 
 - `kubectl config current-context` # gets the current environment
 
+- `kubectl cluster-info` # get cluster info including ip address and DNS
+
 - `kubectl get namespace <namespace>` # gets the namespace
+
+- `kubectl get namespaces` # get all namespaces
+
+- `kubectl get pods -A` # get all pods regardless of namespace
+
+- `kubectl get services -A` # shows the services running in the cluster 
 
 - `kubectl get nodes` # returns all nodes in a kubernetes cluster. shows node name, status, roles, age, and kubernetes version
 
