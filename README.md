@@ -10,7 +10,7 @@ A technology that bundles the code and configuration required to run an applicat
 
 ## running kubernetes locally
 
-minikube is a helpful tool for running kubernetes clusters locally, but should not be used in production. You can install on mac with `brew install minikube` and start the cluster with `minikube start --driver=docker`. Stop the cluster using `minikube stop`
+minikube is a helpful tool for running kubernetes clusters locally, but should not be used in production. You can install on mac with `brew install minikube` and start the cluster with `minikube start --driver=docker`. Create a new cluster and start it, use `minikube start -p <clustername>`. Show all minikube clusters with `minikube profile list` and switch to a different one with `minikube profile <clustername>`. Stop the active cluster using `minikube stop`. Delete the active minikube cluster with `minikube delete`. 
 
 ## helpful code:
 
