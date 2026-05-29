@@ -24,6 +24,8 @@ minikube is a helpful tool for running kubernetes clusters locally, but should n
 
 `kubectl get namespace <namespace>` # gets the namespace
 
+`kubectl get nodes` # returns all nodes in a kubernetes cluster. shows node name, status, roles, age, and kubernetes version
+
 `glooud container clusters get-credentials <cluster>` # gets and merges credentials into ~/.kube/config for the cluster. does not work for private clusters.
 
 `gcloud container fleet memberships list --project=<gcp-project-id>` # list fleet memberships (gke clusters registered to the fleet)
@@ -31,6 +33,7 @@ minikube is a helpful tool for running kubernetes clusters locally, but should n
 `gcloud container fleet memberships get-credentials <gke cluster> --project=<gcp project id>` # get credentials via Connect Gateway (works for private clusters without VPC access)
 
 `kubectx` # list available kubectl contexts
+
 `kubectx <context>` # switch to the target context
 
 
