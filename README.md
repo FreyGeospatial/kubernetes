@@ -50,6 +50,10 @@ Help you organize and isolate workloads.
 
 - `kubectx <context>` # switch to the target context
 
+- `kubectl apply -f <yaml manifest>` # apply a kubernetes manifest to the cluster
+
+- `kubectl get deployments -A` or `kubectl get deployments -n <namespace>`
+
 *Note: a kubectl context is a saved combination of three things: cluster, user, namespace*
 
 ### helm
