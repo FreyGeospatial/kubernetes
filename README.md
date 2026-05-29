@@ -1,6 +1,14 @@
 # kubernetes
 
-helpful code:
+## What is kubernetes?
+
+kubernetes (Gree for helmsman of a ship) is a container orchestration tool). Helps make decisions about where and how containers are launched on a server, when to scale up or down an application, and what to do when an app or server stops working. Kubernetes is written in Go and is open source.
+
+## What are containers?
+
+A technology that bundles the code and configuration required to run an application in one unit. It has advantages over dedicated servers or VMs intended to run an application. It requires less CPU, is more portable, and can spin up/down and scale faster.
+
+## helpful code:
 
 `helm uninstall <name> -n <namespace>` # for uninstalling a release from a kubernetes cluster
 
