@@ -40,7 +40,13 @@ Help you organize and isolate workloads.
 
 - `kubectl get namespaces` # get all namespaces
 
+- `kubectl get pods` # get all pods in default namespace
+
 - `kubectl get pods -A` # get all pods regardless of namespace
+
+- `kubectl get pods -n <namespace> -o wide` # get all pods in a namespace with extra info including ip address
+
+- `kubectl logs <pod name> -n <namespace>` get application logs from pod
 
 - `kubectl get services -A` # shows the services running in the cluster 
 
@@ -57,6 +63,8 @@ Help you organize and isolate workloads.
 - `kubectl delete pod <pod name> -n <namespace>` # deletes pod from namespace. If replicas are set to N in manifest, kubernetes will automatically ensure there are always N pods running, even if manual deletion of pod is executed.
 
 - `kubectl describe pod <pod> -n <namespace>` # describe the pod manifest and show event logs
+
+- `kubectl exec -it <pod name> -- /bin/sh` # shell into pod
 
 *Note: a kubectl context is a saved combination of three things: cluster, user, namespace*
 
