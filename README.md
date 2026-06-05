@@ -67,6 +67,8 @@ Help you organize and isolate workloads.
 - `kubectl exec -it <pod name> -- /bin/sh` # shell into pod
 
 - `stern -n <namespace> <pod prefix> --tail 0` # stream only new logs from one or more k8 pods
+- `kubectl get pod -n <namespace> <pod-name> -o jsonpath='{.spec.serviceAccountName}'` # check gcp service account of pod
+- `kubectl get serviceaccount -n <namespace> <gcp service account> -o yaml` # check k8 service account
 
 *Note: a kubectl context is a saved combination of three things: cluster, user, namespace*
 
@@ -85,6 +87,14 @@ Help you organize and isolate workloads.
 - `gcloud container fleet memberships list --project=<gcp-project-id>` # list fleet memberships (gke clusters registered to the fleet)
 
 - `gcloud container fleet memberships get-credentials <gke cluster> --project=<gcp project id>` # get credentials via Connect Gateway (works for private clusters without VPC access)
+- `gcloud iam service-accounts get-iam-policy <iam email>`
+
+There are two separate identities that need to be linked:
+
+  - Kubernetes Service Account — lives inside your cluster, assigned to the pod
+  - GCP Service Account — lives in Google Cloud, has permissions to GCP resources (database, storage, etc.)
+
+Workload Identity is the bridge between them. It says "when a pod uses k8s service account, allow it to act as GCP service account.
 
 
 *Note: a GKE fleet is a gcp concept for grouping and managing multiple kubernetes clusters together.*
