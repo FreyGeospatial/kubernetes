@@ -52,9 +52,9 @@ Help you organize and isolate workloads.
 
 - `kubectl get nodes` # returns all nodes in a kubernetes cluster. shows node name, status, roles, age, and kubernetes version
 
-- `kubectx` # list available kubectl contexts
+- `kubectx` OR `kubectl config get-contexts` # list available kubectl contexts
 
-- `kubectx <context>` # switch to the target context
+- `kubectx <context>` OR `kubectl config use-context <context>` # switch to the target context
 
 - `kubectl apply -f <yaml manifest>` # apply a kubernetes manifest to the cluster
 
@@ -65,6 +65,8 @@ Help you organize and isolate workloads.
 - `kubectl describe pod <pod> -n <namespace>` # describe the pod manifest and show event logs
 
 - `kubectl exec -it <pod name> -- /bin/sh` # shell into pod
+
+- `stern -n <namespace> <pod prefix> --tail 0` # stream only new logs from one or more k8 pods
 
 *Note: a kubectl context is a saved combination of three things: cluster, user, namespace*
 
