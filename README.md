@@ -69,7 +69,13 @@ Help you organize and isolate workloads.
 - `stern -n <namespace> <pod prefix> --tail 0` # stream only new logs from one or more k8 pods
 - `kubectl get pod -n <namespace> <pod-name> -o jsonpath='{.spec.serviceAccountName}'` # check gcp service account of pod
 - `kubectl get serviceaccount -n <namespace> <gcp service account> -o yaml` # check k8 service account
-
+- ```
+  kubectl get events \
+    --all-namespaces \
+    --sort-by='.lastTimestamp' \
+    -o custom-columns="NAMESPACE:.metadata.namespace,NAME:.involvedObject.name,KIND:.involvedObject.kind,REASON:.reason,MESSAGE:.message,LAST_SEEN:.lastTimestamp"
+  ```
+  - get all operations (not necessarily activity) on a k8 cluster
 *Note: a kubectl context is a saved combination of three things: cluster, user, namespace*
 
 ### helm
@@ -88,6 +94,16 @@ Help you organize and isolate workloads.
 
 - `gcloud container fleet memberships get-credentials <gke cluster> --project=<gcp project id>` # get credentials via Connect Gateway (works for private clusters without VPC access)
 - `gcloud iam service-accounts get-iam-policy <iam email>`
+- ```gcloud container operations list \
+        --project <gcp project> \
+        --filter="targetLink:<cluster>" \
+        --format="table(name,operationType,status,statusMessage,startTime,endTime)" \
+        --sort-by="~startTime"
+  ```
+     - Lists control-plane operations (not workload activity).
+     - Typical use case: diagnosing why a cluster is unhealthy or unresponsive. GKE operations like node auto-repair, version upgrades, or node pool scaling can lock the control plane and
+  cause transient issues. This command lets you see what ran recently and whether anything failed (status=DONE vs ABORTING/FAILED) along with any statusMessage error detail. For kubectl command, see `kubectl get events`
+
 
 There are two separate identities that need to be linked:
 
