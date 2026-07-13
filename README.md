@@ -80,11 +80,13 @@ Help you organize and isolate workloads.
 
 ### helm
 
-- `helm uninstall <name> -n <namespace>` # for uninstalling a release from a kubernetes cluster
+- `helm uninstall <name> -n <namespace>` # for uninstalling a release from a kubernetes cluster. user `--keep-history` if needed
 
 - `helm list -A` # list all releases in a cluster
 
 - `helm list -n <namespace>` # list all releases in a cluster namespace
+
+- `helm show values <chart>` # values.yaml file for the chart
 
 ### gcp specific kubernetes management
 
