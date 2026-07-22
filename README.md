@@ -34,6 +34,8 @@ Help you organize and isolate workloads.
 
 - `kubectl config current-context` # gets the current environment
 
+- `kubectl config get-clusters` # gets clusters currently defined in the kubeconfig
+
 - `kubectl cluster-info` # get cluster info including ip address and DNS
 
 - `kubectl get namespace <namespace>` # gets the namespace
