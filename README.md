@@ -16,6 +16,10 @@ Help you organize and isolate workloads.
 
 ## helpful code:
 
+### kind
+
+- list all `kind` clusters with `kind get clusters`
+
 ### minikube
 
 - start the cluster with `minikube start --driver=docker`. 
