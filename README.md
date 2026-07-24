@@ -26,7 +26,9 @@ Help you organize and isolate workloads.
 
 ### minikube
 
-- start the cluster with `minikube start --driver=docker`. 
+- start the cluster with `minikube start --driver=docker`.
+
+- `minikube start --insecure-registry=host.minikube.internal:5001 --driver=docker` to trust localhost registry registry
 
 - Create a new cluster and start it, use `minikube start -p <clustername>`. 
 
