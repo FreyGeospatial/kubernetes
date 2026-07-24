@@ -18,7 +18,7 @@ Help you organize and isolate workloads.
 
 ### docker
 
-- `docker run -d -p 5000:5000 --restart=always --name registry registry:2` # creates an artifact registry using docker's official registry image
+- `docker run -d -p 5001:5000 --restart=always --name registry registry:2` # creates an artifact registry using docker's official registry image. 5001 is the port available on the host/outside the container that receives traffic. 5000 is the port that the image inside the container listens on for traffic, which is mapped to the host port.
 
 ### kind
 
