@@ -16,6 +16,10 @@ Help you organize and isolate workloads.
 
 ## helpful code:
 
+### docker
+
+- `docker run -d -p 5000:5000 --restart=always --name registry registry:2` # creates an artifact registry using docker's official registry image
+
 ### kind
 
 - list all `kind` clusters with `kind get clusters`
