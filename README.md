@@ -90,6 +90,8 @@ Help you organize and isolate workloads.
   - get all operations (not necessarily activity) on a k8 cluster
 *Note: a kubectl context is a saved combination of three things: cluster, user, namespace*
 
+- `kubectl get secret <secret-name> -n <namespace> -o json | jq -r '.data | map_values(@base64d)'` # gets and decrypts all secrets env vars in a k8 manifest
+
 ### helm
 
 - `helm uninstall <name> -n <namespace>` # for uninstalling a release from a kubernetes cluster. user `--keep-history` if needed
