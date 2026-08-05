@@ -91,7 +91,7 @@ Help you organize and isolate workloads.
 *Note: a kubectl context is a saved combination of three things: cluster, user, namespace*
 
 - `kubectl get secret <secret-name> -n <namespace> -o json | jq -r '.data | map_values(@base64d)'` # gets and decrypts all secrets env vars in a k8 manifest
-
+- `kubectl get crd` # get custom resource definitions on the cluster
 ### helm
 
 - `helm uninstall <name> -n <namespace>` # for uninstalling a release from a kubernetes cluster. user `--keep-history` if needed
