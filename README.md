@@ -2,7 +2,7 @@
 
 ## What is kubernetes?
 
-kubernetes (Gree for helmsman of a ship) is a container orchestration tool). Helps make decisions about where and how containers are launched on a server, when to scale up or down an application, and what to do when an app or server stops working. Kubernetes is written in Go and is open source.
+kubernetes (Greek for helmsman of a ship) is a container orchestration tool). Helps make decisions about where and how containers are launched on a server, when to scale up or down an application, and what to do when an app or server stops working. Kubernetes is written in Go and is open source.
 
 `minikube` is a helpful tool for running kubernetes clusters locally, but should not be used in production. You can install on mac with `brew install minikube`
 
