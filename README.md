@@ -82,6 +82,7 @@ Help you organize and isolate workloads.
 - `stern -n <namespace> <pod prefix> --tail 0` # stream only new logs from one or more k8 pods
 - `kubectl get pod -n <namespace> <pod-name> -o jsonpath='{.spec.serviceAccountName}'` # check gcp service account of pod
 - `kubectl get serviceaccount -n <namespace> <gcp service account> -o yaml` # check k8 service account
+- `kubectl proxy` # authenticates with the API server on the control plane node and makes services available on the default proxy port 8001. e.g., after this run `curl localhost:8001`
 - ```
   kubectl get events \
     --all-namespaces \
